@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Categories </title>
+    <link rel="stylesheet" href="css/products.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            list-style: none;
+        }
+        body {
+          font-family:'Lucida Sans', 'Lucida Sans Regular', sans-serif;
+          background: transparent;
+        }
+        html{
+            background: #fbf9f9;
+            font-family: 'poppins', sans-serif;
+        }
+        img{
+            width: 15%;
+            height: 15%;
+        }
+        header{
+          padding-bottom: 100px;
+        }
+        .nav-container{
+            width: 100%;
+            height: 110px;
+            background: linear-gradient(35deg, rgba(0, 0, 0, 0.1), rgba(0,0,0,.1));
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 12px;
+            z-index: 1;
+            position: absolute;
+        }
+        .nav-container .logo{
+            width: 800px;
+        }
+        .nav-container .logo img{
+            border-radius: 100%;
+        }
+        .hamburger{
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+        }
+        .hamburger .line {
+            width: 25px;
+            height: 3px;
+            background: black;
+            margin: 4px 0;
+        }
+        .navbar ul{
+            display: flex;
+        }
+        .navbar ul li a{
+            display: block;
+            color: black;
+            font-size: 15px;
+            padding: 10px 25px;
+            border-radius: 25px;
+            transition: .5s;
+            margin: 0 10px;
+        }
+        .navbar ul li a:hover{
+            color: black;
+            background: white;
+        }
+.section_title {
+    padding-bottom: .5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    color: black;
+    position: relative;
+    padding-top: 4rem;
+    text-decoration: underline;
+}
+/*musthave*/
+.musthave_nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 5rem;
+}
+.musthave_nav a {
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgb(20, 19, 19);
+    transition: 0.3s;
+}
+.musthave_nav a:hover{
+    color: grey;
+}
+        .child {
+            margin: 30px auto;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 0 5px;
+        }
+        .childprods {
+          flex-basis: 25%;
+          padding: 40px;
+          min-width: 200px;
+          margin-bottom: 25px;
+          transition: transform 0.5s;
+        }
+        .childprods img {
+          width: 220px;
+          height: 300px;
+        }
+        .childprods p {
+          font-size: 15px;
+          text-align: left;
+        }
+        .rating .fa {
+          color: #5fa387;
+        }
+        .childprods:hover {
+          cursor: pointer;
+          transform: translateY(-5px);
+        }
+        .belowfooter {
+          text-align: center;
+          border-top: 3px solid rgb(66, 66, 66);
+          padding-top: 2em;
+        }
+        .footerChild1, .footerChild2 {
+          min-width: 250px;
+          margin-bottom: 20px;
+        }
+        .footerChild1 {
+          flex: 1;
+          text-align: center;
+        }
+        .footerChild1 img {
+          width: 180px;
+          margin-bottom: 20px;
+        }
+        .footerChild2 {
+          flex-basis: 12%;
+        }
+        .footerChild2 img {
+          width: 250px;
+        }
+        .footerChild2 p {
+          align-items: right;
+          font-size: 14px;
+        }
+        .page-btn {
+          margin-bottom: 35px;
+          text-align: center;
+        }
+        .page-btn span {
+          display: inline-block;
+          background-color: rgb(83, 134, 103);
+          margin-left: 10px;
+          width: 40px;
+          height: 40px;
+          text-align: center;
+          line-height: 40px;
+          cursor: pointer;
+          border-radius: 5px;
+        }
+        .page-btn span:hover {
+          background-color: #333;
+          border: 1px solid grey;
+        }
+        @media only screen and (max-width: 670px) {
+          .child {
+              text-align: center;
+          }
+        }
+        .footer {
+          padding: 80px 90px;
+          background: #241816;
+          margin-top: 30px;
+          color: white;
+        }
+        .footer-box {
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+        }
+        .footer-i {
+          flex: 1;
+          margin: 20px;
+          min-width: 200px; /* Ensures the items don't get too narrow on small screens */
+        }
+        .footer-i h4 {
+          margin-bottom: 15px;
+          font-size: 19px;
+        }
+        .footer-i p {
+          margin-bottom: 5px;
+          font-size: 14px;
+          color: rgb(137, 130, 130);
+        }
+        /* Remove the relative positioning for f3 and f4 to align them properly */
+        .footer-i.f3, .footer-i.f4 {
+          position: static;
+        }
+        .footer-i.f4 p {
+          width: 100%; /* Make sure the width is appropriate for responsiveness */
+          line-height: 22px;
+        }
+        .subscribe-form {
+          display: flex;
+          margin-top: 20px;
+        }
+        .subscribe-form input {
+          flex: 1;
+          padding: 12px 30px;
+          border: none;
+          outline: none;
+        }
+        .subscribe-form button {
+          padding: 12px;
+          background: white;
+          border: none;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .footer-i.f4 .social-media {
+          margin-top: 30px;
+          display: flex;
+          gap: 10px; /* Adds space between icons */
+        }
+        .footer-i.f4 .social-media a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-decoration: none; /* Remove the underline from links */
+        }
+        .footer-i.f4 .social-media a i {
+          color: white;
+          font-size: 19px;
+          border-radius: 50%;
+          transition: all .3s ease-in-out;
+          padding: 13px;
+        }
+        .footer-i.f4 .social-media a i:hover {
+          background: white;
+          color: black;
+        }
+        /* Media Queries */
+        @media (max-width: 1024px) {
+            .nav-container .logo {
+                width: 600px;
+            }
+            .childprods {
+                flex-basis: 30%;
+                padding: 30px;
+            }
+        }
+        @media (max-width: 835px) {
+          .footer-box .footer-i.f3 {
+              position: static;
+          }
+        }
+        @media (max-width: 768px) {
+            .nav-container .logo {
+                width: 400px;
+            }
+            .childprods {
+                flex-basis: 45%;
+                padding: 20px;
+            }
+            .navbar ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            .navbar ul li a {
+                margin: 5px 0;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .navbar {
+                display: none;
+            }
+            .hamburger.active + .navbar {
+                display: flex;
+            }
+        }
+        @media (max-width: 580px) {
+          .footer-box .footer-i.f4 {
+              margin: 20px;
+          }
+          .footer-box .footer-i.f4 p {
+              width: 300px;
+          }
+          .subscribe-form input {
+              width: 250px;
+              padding: 12px 30px;
+          }
+        }
+        @media (max-width: 480px) {
+            .nav-container .logo {
+                width: 300px;
+            }
+            .childprods {
+                flex-basis: 100%;
+                padding: 10px;
+            }
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+        @media (max-width: 440px) {
+          body {
+              text-align: center;
+              padding: 0;
+              margin: 0;
+          }
+          .footer-box {
+              flex-direction: column;
+              align-items: center;
+          }
+          .footer-i {
+              margin: 10px 0;
+          }
+          .footer-box .footer-i.f4 p {
+              width: 250px;
+              margin: 0 auto;
+          }
+          .subscribe-form {
+              flex-direction: column;
+              align-items: center;
+          }
+          .subscribe-form input {
+              width: 200px;
+              padding: 10px 25px;
+              margin: 10px 0;
+          }
+          .subscribe-form button {
+              width: 50px;
+              padding: 10px;
+              margin: 10px 0;
+          }
+          .footer-i.f4 .social-media {
+              justify-content: center;
+          }
+          .footer-i.f4 .social-media a {
+              margin: 0 5px;
+          }
+          .footer-i.f4 .social-media a i {
+              font-size: 17px;
+              padding: 11px;
+          }
+        }
+    </style>
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <div class="logo">
+        <img src="Images/logo.jpg" alt="logo">
+      </div>
+      <div class="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <nav class="navbar">
+        <ul>
+          <li><a href="index.html">Trends</a></li>
+          <li><a href="category.html">Category</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="news.html">News</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <section class="section_container">
+    <h2 class="section_title"> Must have</h2>
+    <div class="musthave_nav">
+        <a href="category.html">ALL</a>
+        <a href="#">MAN</a>
+        <a href="#">WOMAN</a>
+        <a href="#">BAGS</a>
+        <a href="#">SHOES</a>
+        <a href="#">KIDS</a>
+    </div>
+  </section>
+
+  <div class="child">
+    <div class="childprods">
+      <img src="Images/1685985496229.jpg" alt="product1">
+      <p>Black T-Shirt for Women</p>
+      <div class="rating">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half"></i>
+      </div>
+      <p>$59.99</p>
+    </div>
+    <div class="childprods">
+      <img src="Images/1693676537804.jpg" alt="product2">
+      <p>Men's Casual Hoodies</p>
+      <div class="rating">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half"></i>
+      </div>
+      <p>$59.99</p>
+    </div>
+    <div class="childprods">
+        <img src="Images/1710277243470.jpg" alt="product4">
+        <p>Sports Wear</p>
+        <div class="rating">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <p>$59.99</p>
+      </div>
+      <div class="childprods">
+        <img src="Images/1710277243470.jpg" alt="product4">
+        <p>Sports Wear</p>
+        <div class="rating">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <p>$59.99</p>
+      </div>
+      <div class="childprods">
+        <img src="Images/1710277243470.jpg" alt="product4">
+        <p>Sports Wear</p>
+        <div class="rating">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <p>$59.99</p>
+      </div>
+      <div class="childprods">
+        <img src="Images/1710277243470.jpg" alt="product4">
+        <p>Sports Wear</p>
+        <div class="rating">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <p>$59.99</p>
+      </div>
+      <div class="childprods">
+        <img src="Images/1710277243470.jpg" alt="product4">
+        <p>Sports Wear</p>
+        <div class="rating">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <p>$59.99</p>
+      </div>
+      <div class="childprods">
+        <img src="Images/1710277243470.jpg" alt="product4">
+        <p>Sports Wear</p>
+        <div class="rating">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <p>$59.99</p>
+      </div>
+      <div class="childprods">
+        <img src="Images/1710277243470.jpg" alt="product4">
+        <p>Sports Wear</p>
+        <div class="rating">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <p>$59.99</p>
+      </div>
+      <div class="childprods">
+        <img src="Images/1710277243470.jpg" alt="product4">
+        <p>Sports Wear</p>
+        <div class="rating">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <p>$59.99</p>
+      </div>
+      <div class="childprods">
+        <img src="Images/1710277243470.jpg" alt="product4">
+        <p>Sports Wear</p>
+        <div class="rating">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <p>$59.99</p>
+      </div>
+      <div class="childprods">
+        <img src="Images/1710277243470.jpg" alt="product4">
+        <p>Sports Wear</p>
+        <div class="rating">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <p>$59.99</p>
+      </div>
+      <div class="childprods">
+        <img src="Images/1710277243470.jpg" alt="product4">
+        <p>Sports Wear</p>
+        <div class="rating">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <p>$59.99</p>
+      </div>
+      <div class="childprods">
+        <img src="Images/1710277243470.jpg" alt="product4">
+        <p>Sports Wear</p>
+        <div class="rating">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <p>$59.99</p>
+      </div>
+    <div class="childprods">
+      <img src="Images/1694075981937.jpg" alt="product3">
+      <p>Unisex slim fits</p>
+      <div class="rating">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half"></i>
+      </div>
+      <p>$59.99</p>
+    </div>
+    <div class="childprods">
+      <img src="Images/1710277243470.jpg" alt="product4">
+      <p>Sports Wear</p>
+      <div class="rating">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+      </div>
+      <p>$59.99</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-box">
+      <div class="footer-i f1">
+        <h4>About Us</h4>
+        <p>Trend Clothes is a modern online shopping platform dealing with all kinds of clothes. 
+            We range from women, men, and children. At Trends Clothes, 
+            we value our customers and we are here to serve you. 
+            Come and experience the magic of trends with us!</p>
+      </div>
+      <div class="footer-i f2">
+        <h4>Visit Us</h4>
+        <p>Getting Here</p>
+        <p>Our Supporters</p>
+        <p>Sitting Charts</p>
+        <p>Staff Directory</p>
+        <p>Current Season</p>
+        <p>Donor Events</p>
+      </div>
+      <div class="footer-i f3">
+        <h4>Contact Us</h4>
+        <p>Address: 155 Uwanja Wa Ndege, Mazeras, Kenya</p>
+        <p>Email: info@trends.com</p>
+        <p>Phone: +254714263178</p>
+      </div>
+      <div class="footer-i f4">
+        <h4>Subscribe</h4>
+        <form class="subscribe-form">
+          <input type="email" placeholder="Email Address">
+          <button type="submit"><i class="fa fa-envelope"></i></button>
+        </form>
+        <div class="social-media">
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="belowfooter">
+    <p>&copy; 2024 Trends Fashions. All rights reserved.</p>
+  </div>
+  <script>
+    document.querySelector('.hamburger').addEventListener('click', function() {
+      this.classList.toggle('active');
+      document.querySelector('.navbar').classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>

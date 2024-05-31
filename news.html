@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> News </title>
+    <link rel="stylesheet" href="css/products.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+      
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            list-style: none;
+        }
+        body {
+          font-family:'Lucida Sans', 'Lucida Sans Regular', sans-serif;
+          background: transparent;
+        }
+        html{
+            background: #fbf9f9;
+            font-family: 'poppins', sans-serif;
+        }
+        img{
+            width: 15%;
+            height: 15%;
+        }
+        header{
+          padding-bottom: 100px;
+        }
+        .nav-container{
+            width: 100%;
+            height: 110px;
+            background: linear-gradient(35deg, rgba(0, 0, 0, 0.1), rgba(0,0,0,.1));
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 12px;
+            z-index: 1;
+            position: absolute;
+        }
+        .nav-container .logo{
+            width: 800px;
+        }
+        .nav-container .logo img{
+            border-radius: 100%;
+        }
+        .hamburger{
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+        }
+        .hamburger .line {
+            width: 25px;
+            height: 3px;
+            background: black;
+            margin: 4px 0;
+        }
+        .navbar ul{
+            display: flex;
+        }
+        .navbar ul li a{
+            display: block;
+            color: black;
+            font-size: 15px;
+            padding: 10px 25px;
+            border-radius: 25px;
+            transition: .5s;
+            margin: 0 10px;
+        }
+        .navbar ul li a:hover{
+            color: black;
+            background: white;
+        }
+        
+        .news {
+          background-color: white;
+          margin-top: 50px;
+        }
+        .news h4 {
+          font-size: 1.6rem;
+          font-weight: 600;
+          color: black;
+          text-align: center;
+          padding: 60px;
+        }
+        .news_card {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+        .news_card img {
+          width: 100%;
+          max-width: 330px; /* Sets the maximum width to 330px */
+          height: 230px; /* Sets the height to 230px */
+          object-fit: cover; /* Ensures the image covers the area without distortion */
+          margin-bottom: 1rem; /* Adds some space between the image and the text */
+        }
+        .news_grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 2rem;
+        }
+        .news_details {
+          width: 100%;
+          max-width: 330px; /* Ensures text container is the same width as the image */
+          padding: 1rem;
+          display: grid;
+          gap: 1rem;
+          text-align: center;
+        }
+        .news_details p {
+          font-size: 0.8rem;
+          color: rgba(0, 0, 0, 0.89);
+
+        }
+        .news_details p i {
+          font-size: .5rem;
+          color: black;
+          padding: 0.5rem;
+        }
+        .news_details p span {
+          font-weight: 600;
+        }
+        .news_details h5 {
+          font-size: 1.2rem;
+          font-weight: 600;
+          color: black;
+        }
+        .news_details a i {
+          font-size: 1.2rem;
+          color: black;
+          transition: 0.3s;
+        }
+        .news_details a:hover i {
+          color: aquamarine;
+        }
+
+        /*footer*/
+        .footer {
+          padding: 30px 80px 90px;
+          background: #241816;
+          margin-top: 120px;
+          color: white;
+        }
+        .footer-box {
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+        }
+        .footer-i {
+          flex: 1;
+          margin: 20px;
+          min-width: 200px; /* Ensures the items don't get too narrow on small screens */
+        }
+        .footer-i h4 {
+          margin-bottom: 15px;
+          font-size: 19px;
+        }
+        .footer-i p {
+          margin-bottom: 5px;
+          font-size: 14px;
+          color: rgb(137, 130, 130);
+        }
+        /* Remove the relative positioning for f3 and f4 to align them properly */
+        .footer-i.f3, .footer-i.f4 {
+          position: static;
+        }
+        .footer-i.f4 p {
+          width: 100%; /* Make sure the width is appropriate for responsiveness */
+          line-height: 22px;
+        }
+        .subscribe-form {
+          display: flex;
+          margin-top: 20px;
+        }
+        .subscribe-form input {
+          flex: 1;
+          padding: 12px 30px;
+          border: none;
+          outline: none;
+        }
+        .subscribe-form button {
+          padding: 12px;
+          background: white;
+          border: none;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .footer-i.f4 .social-media {
+          margin-top: 30px;
+          display: flex;
+          gap: 10px; /* Adds space between icons */
+        }
+        .footer-i.f4 .social-media a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-decoration: none; /* Remove the underline from links */
+        }
+        .footer-i.f4 .social-media a i {
+          color: white;
+          font-size: 19px;
+          border-radius: 50%;
+          transition: all .3s ease-in-out;
+          padding: 13px;
+        }
+        .footer-i.f4 .social-media a i:hover {
+          background: white;
+          color: black;
+        }
+        .belowfooter {
+          text-align: center;
+          border-top: 3px solid rgb(66, 66, 66);
+          padding-top: 2em;
+        }
+        /* Media Queries */
+        @media (max-width: 1024px) {
+            .nav-container .logo {
+                width: 600px;
+            }
+            .childprods {
+                flex-basis: 30%;
+                padding: 30px;
+            }
+        }
+        @media (max-width: 835px) {
+          .footer-box .footer-i.f3 {
+              position: static;
+          }
+        }
+        @media (max-width: 768px) {
+            .nav-container .logo {
+                width: 400px;
+            }
+            .childprods {
+                flex-basis: 45%;
+                padding: 20px;
+            }
+            .navbar ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            .navbar ul li a {
+                margin: 5px 0;
+            }
+        }
+        @media (max-width: 480px) {
+            .hamburger {
+                display: flex;
+            }
+            .navbar {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                background: rgba(255, 255, 255, 0.9);
+                position: absolute;
+                top: 100px;
+                left: 0;
+                z-index: 1;
+            }
+            .navbar.active {
+                display: flex;
+            }
+            .news_grid {
+              grid-template-columns: 1fr; /* Single column layout for smaller screens */
+              gap: 2rem;
+            }
+            .footer-box {
+                flex-direction: column;
+                align-items: center;
+            }
+            .footer-box .footer-i {
+                margin-bottom: 30px;
+            }
+            .footer-box .footer-i.f3,
+            .footer-box .footer-i.f4 {
+                margin-bottom: 20px;
+            }
+        }
+        @media (max-width: 450px) {
+          .footer-box .footer-i.f3 {
+              position: static;
+              margin: 20px 0;
+          }
+          .footer-i.f4 .social-media a i {
+              font-size: 17px;
+              padding: 11px;
+          }
+        }
+    </style>
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <div class="logo">
+        <img src="Images/logo.jpg" alt="logo">
+      </div>
+      <div class="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <nav class="navbar">
+        <ul>
+          <li><a href="index.html">Trends</a></li>
+          <li><a href="category.html">Category</a></li>
+          <li><a href="products.html">products</a></li>
+          <li><a href="news.html">News</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="news">
+    <div class="section_container news_container">
+      <h4 class="section_tittle">Latest News</h4>
+      <div class="news_grid">
+        <div class="news_card">
+          <img src="Images/1694075981937.jpg" alt="news">
+          <div class="news_details">
+            <p>
+              FASHION <i class="fa-solid fa-circle"></i>
+              <span>LOIS VULTON</span>
+              <i class="fa-solid fa-circle"></i> JUNE,1 2024
+            </p>
+            <h5>Seasonal Trends</h5>
+            <hr>
+            <p>
+              Discuss the latest fashion trends for the current season and offer tips and ideas 
+              on how to incorporate these trends into your wardrobe.
+            </p>
+            <a href="#"><i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="news_card">
+          <img src="Images/1694721188792.jpg" alt="news">
+          <div class="news_details">
+            <p>
+              Trends <i class="fa-solid fa-circle"></i>
+              <span>LOIS VULTON</span>
+              <i class="fa-solid fa-circle"></i> JUNE,12 2024
+            </p>
+            <h5>Fashion Tips and Advise</h5>
+            <hr>
+            <p>
+              Provide your reader with practical tips and advice on how to 
+              dress on different occasions, body types, or style preferences.
+            </p>
+            <a href="#"><i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="news_card">
+          <img src="Images/shoe 9.jpg" alt="news">
+          <div class="news_details">
+            <p>
+              STYLE <i class="fa-solid fa-circle"></i>
+              <span>GUCCI</span>
+              <i class="fa-solid fa-circle"></i>JUNE,20 2024
+            </p>
+            <h5>Sustainable Fashion</h5>
+            <hr>
+            <p>
+              Cover the growing trend of eco-conscius fashion and explore the 
+              various ways to be sustainable in your fashion choices.
+            </p>
+            <a href="#"><i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="footer">
+    <div class="footer-box">
+      <div class="footer-i f1">
+        <h4>About Us</h4>
+        <p>Trend Clothes is a modern online shopping platform dealing with all kinds of clothes. 
+          We range from women, men, and children. At Trends Clothes, 
+          we value our customers and we are here to serve you. 
+          Come and experience the magic of trends with us!</p>
+      </div>
+      <div class="footer-i f2">
+        <h4>Visit Us</h4>
+        <p>Getting Here</p>
+        <p>Our Supporters</p>
+        <p>Sitting Charts</p>
+        <p>Staff Directory</p>
+        <p>Current Season</p>
+        <p>Donor Events</p>
+      </div>
+      <div class="footer-i f3">
+        <h4>Contact Us</h4>
+        <p>Address: 155 Uwanja Wa Ndege, Mazeras, Kenya</p>
+        <p>Email: info@trends.com</p>
+        <p>Phone: +254714263178</p>
+      </div>
+      <div class="footer-i f4">
+        <h4>Subscribe</h4>
+        <form class="subscribe-form">
+          <input type="email" placeholder="Email Address">
+          <button type="submit"><i class="fa fa-envelope"></i></button>
+        </form>
+        <div class="social-media">
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="belowfooter">
+    <p>&copy; 2024 Trends Fashions. All rights reserved.</p>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburger = document.querySelector('.hamburger');
+      const navbar = document.querySelector('.navbar');
+      
+      hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        navbar.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>
