@@ -75,36 +75,8 @@
             color: black;
             background: white;
         }
-        .child {
-            margin: 30px auto;
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            padding: 0 5px;
-        }
-        .childprods {
-          flex-basis: 25%;
-          padding: 40px;
-          min-width: 200px;
-          margin-bottom: 25px;
-          transition: transform 0.5s;
-        }
-        .childprods img {
-          width: 220px;
-          height: 300px;
-        }
-        .childprods p {
-          font-size: 15px;
-          text-align: left;
-        }
-        .rating .fa {
-          color: #5fa387;
-        }
-        .childprods:hover {
-          cursor: pointer;
-          transform: translateY(-5px);
-        }
+        
+       
         .belowfooter {
           text-align: center;
           border-top: 3px solid rgb(66, 66, 66);
@@ -152,6 +124,96 @@
           border: 1px solid grey;
         }
         
+
+
+
+
+        #products1 {
+            text-align: center;
+            padding: 25px;
+
+        }
+        #products1 h2 {
+          font-size: 50px;
+          color: black;
+          font-weight: 800;
+        }
+        #products1 p {
+          font-size: 20px;
+          padding: 20px 10px;
+        }
+
+        #products1 .pro-container {
+          display: flex;
+          justify-content: space-between;
+          padding-top: 20px;
+          flex-wrap: wrap;
+        }
+
+        #products1 .pro {
+            width: 23%;
+            min-width: 250px;
+            padding: 10px 12px;
+            border: 1px solid #cce7d0;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02) ;
+            margin: 15px 0;
+            transition: 0.2s ease;
+            position: relative;
+        } 
+        
+        #products1 .pro:hover {
+            box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06) ;
+        }
+
+        #products1 .pro img {
+            width: 230px;
+            height: 300px;
+            border-radius: 20px;
+        }
+        #products1 .pro .des {
+            text-align: start;
+            padding: 10px 0;
+        }
+        
+        #products1 .pro .des span {
+            color: #606063;
+            font-size: 14px;
+            
+        }
+        #products1 .pro .des h3 {
+          padding-top: 7px;
+          color: #1a1a1a;
+          font-size: 16px;
+        }
+        #products1 .pro .des i {
+          font-size: 14px;
+          color: rgb(243, 181, 25, );
+        }
+        #products1 .pro .des h4 {
+          padding-top: 7px;
+          font-size: 17px;
+          font-weight: 700;
+          color: #088178;
+        }
+        #products1 .pro .cart {
+          width: 40px;
+          height: 40px;
+          line-height: 40px;
+          border-radius: 50px;
+          background-color: #e8f6ea;
+          font-weight: 500;
+          color: #088178;
+          border: 1px solid #cce7d0;
+          position: absolute;
+          bottom: 20px;
+          right: 10px;
+        }
+        #products1 .pro .cart:hover {
+          color: red;
+        }
+
         .footer {
           padding: 80px 90px;
           background: #241816;
@@ -234,6 +296,10 @@
             .childprods {
                 flex-basis: 30%;
                 padding: 30px;
+            }
+            .footer-i {
+                flex: 0 1 50%;
+                margin: 20px;
             }
         }
         @media (max-width: 835px) {
@@ -362,209 +428,264 @@
     </div>
   </header>
 
-  <div class="child">
-    <div class="childprods">
-      <img src="Images/1685985496229.jpg" alt="product1">
-      <p>Black T-Shirt for Women</p>
-      <div class="rating">
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star-half"></i>
-      </div>
-      <p>$59.99</p>
-    </div>
-    <div class="childprods">
-      <img src="Images/1693676537804.jpg" alt="product2">
-      <p>Men's Casual Hoodies</p>
-      <div class="rating">
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star-half"></i>
-      </div>
-      <p>$59.99</p>
-    </div>
-    <div class="childprods">
-        <img src="Images/1710277243470.jpg" alt="product4">
-        <p>Sports Wear</p>
-        <div class="rating">
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
+
+
+
+  <section id="products1" class="section1">
+    <h2> Featured Products </h2>
+    <p>Summer Collection New Modern Designs</p>
+    <div class="pro-container">
+      <div class="pro">
+        <img src="Images/1693676537804.jpg" alt="Product 1">
+        <div class="des">
+            <span>Category</span>
+            <h3>Product Name</h3>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <h4>$49.99</h4>
         </div>
-        <p>$59.99</p>
-      </div>
-      <div class="childprods">
-        <img src="Images/1710277243470.jpg" alt="product4">
-        <p>Sports Wear</p>
-        <div class="rating">
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-        </div>
-        <p>$59.99</p>
-      </div>
-      <div class="childprods">
-        <img src="Images/1710277243470.jpg" alt="product4">
-        <p>Sports Wear</p>
-        <div class="rating">
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-        </div>
-        <p>$59.99</p>
-      </div>
-      <div class="childprods">
-        <img src="Images/1710277243470.jpg" alt="product4">
-        <p>Sports Wear</p>
-        <div class="rating">
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-        </div>
-        <p>$59.99</p>
-      </div>
-      <div class="childprods">
-        <img src="Images/1710277243470.jpg" alt="product4">
-        <p>Sports Wear</p>
-        <div class="rating">
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-        </div>
-        <p>$59.99</p>
-      </div>
-      <div class="childprods">
-        <img src="Images/1710277243470.jpg" alt="product4">
-        <p>Sports Wear</p>
-        <div class="rating">
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-        </div>
-        <p>$59.99</p>
-      </div>
-      <div class="childprods">
-        <img src="Images/1710277243470.jpg" alt="product4">
-        <p>Sports Wear</p>
-        <div class="rating">
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-        </div>
-        <p>$59.99</p>
-      </div>
-      <div class="childprods">
-        <img src="Images/1710277243470.jpg" alt="product4">
-        <p>Sports Wear</p>
-        <div class="rating">
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-        </div>
-        <p>$59.99</p>
-      </div>
-      <div class="childprods">
-        <img src="Images/1710277243470.jpg" alt="product4">
-        <p>Sports Wear</p>
-        <div class="rating">
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-        </div>
-        <p>$59.99</p>
-      </div>
-      <div class="childprods">
-        <img src="Images/1710277243470.jpg" alt="product4">
-        <p>Sports Wear</p>
-        <div class="rating">
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-        </div>
-        <p>$59.99</p>
-      </div>
-      <div class="childprods">
-        <img src="Images/1710277243470.jpg" alt="product4">
-        <p>Sports Wear</p>
-        <div class="rating">
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-        </div>
-        <p>$59.99</p>
-      </div>
-      <div class="childprods">
-        <img src="Images/1710277243470.jpg" alt="product4">
-        <p>Sports Wear</p>
-        <div class="rating">
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-        </div>
-        <p>$59.99</p>
-      </div>
-    <div class="childprods">
-      <img src="Images/1694075981937.jpg" alt="product3">
-      <p>Unisex slim fits</p>
-      <div class="rating">
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star-half"></i>
-      </div>
-      <p>$59.99</p>
+        <div class="cart"><i class="fas fa-shopping-cart"></i></div>
     </div>
 
-    <div class="childprods">
-      <img src="Images/logo.jpg" alt="product4">
-      <p>Sports Wear</p>
-      <div class="rating">
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
+    <div class="pro">
+      <img src="Images/1693676537804.jpg" alt="Product 1">
+      <div class="des">
+          <span>Category</span>
+          <h3>Product Name</h3>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star-half-alt"></i>
+          <h4>$49.99</h4>
       </div>
-      <p>$59.99</p>
-    </div>
+      <div class="cart"><i class="fas fa-shopping-cart"></i></div>
   </div>
 
+  <div class="pro">
+    <img src="Images/1693676537804.jpg" alt="Product 1">
+    <div class="des">
+        <span>Category</span>
+        <h3>Product Name</h3>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star-half-alt"></i>
+        <h4>$49.99</h4>
+    </div>
+    <div class="cart"><i class="fas fa-shopping-cart"></i></div>
+</div>
 
+<div class="pro">
+  <img src="Images/1693676537804.jpg" alt="Product 1">
+  <div class="des">
+      <span>Category</span>
+      <h3>Product Name</h3>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star-half-alt"></i>
+      <h4>$49.99</h4>
+  </div>
+  <div class="cart"><i class="fas fa-shopping-cart"></i></div>
+</div>
+
+<div class="pro">
+  <img src="Images/1693676537804.jpg" alt="Product 1">
+  <div class="des">
+      <span>Category</span>
+      <h3>Product Name</h3>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star-half-alt"></i>
+      <h4>$49.99</h4>
+  </div>
+  <div class="cart"><i class="fas fa-shopping-cart"></i></div>
+</div>
+
+<div class="pro">
+  <img src="Images/1693676537804.jpg" alt="Product 1">
+  <div class="des">
+      <span>Category</span>
+      <h3>Product Name</h3>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star-half-alt"></i>
+      <h4>$49.99</h4>
+  </div>
+  <div class="cart"><i class="fas fa-shopping-cart"></i></div>
+</div>
+
+<div class="pro">
+  <img src="Images/1693676537804.jpg" alt="Product 1">
+  <div class="des">
+      <span>Category</span>
+      <h3>Product Name</h3>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star-half-alt"></i>
+      <h4>$49.99</h4>
+  </div>
+  <div class="cart"><i class="fas fa-shopping-cart"></i></div>
+</div>
+
+<div class="pro">
+  <img src="Images/1693676537804.jpg" alt="Product 1">
+  <div class="des">
+      <span>Category</span>
+      <h3>Product Name</h3>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star-half-alt"></i>
+      <h4>$49.99</h4>
+  </div>
+  <div class="cart"><i class="fas fa-shopping-cart"></i></div>
+</div>
+
+<div class="pro">
+  <img src="Images/1693676537804.jpg" alt="Product 1">
+  <div class="des">
+      <span>Category</span>
+      <h3>Product Name</h3>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star-half-alt"></i>
+      <h4>$49.99</h4>
+  </div>
+  <div class="cart"><i class="fas fa-shopping-cart"></i></div>
+</div>
+
+<div class="pro">
+  <img src="Images/1693676537804.jpg" alt="Product 1">
+  <div class="des">
+      <span>Category</span>
+      <h3>Product Name</h3>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star-half-alt"></i>
+      <h4>$49.99</h4>
+  </div>
+  <div class="cart"><i class="fas fa-shopping-cart"></i></div>
+</div>
+
+<div class="pro">
+  <img src="Images/1693676537804.jpg" alt="Product 1">
+  <div class="des">
+      <span>Category</span>
+      <h3>Product Name</h3>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star-half-alt"></i>
+      <h4>$49.99</h4>
+  </div>
+  <div class="cart"><i class="fas fa-shopping-cart"></i></div>
+</div>
+
+<div class="pro">
+  <img src="Images/1693676537804.jpg" alt="Product 1">
+  <div class="des">
+      <span>Category</span>
+      <h3>Product Name</h3>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star-half-alt"></i>
+      <h4>$49.99</h4>
+  </div>
+  <div class="cart"><i class="fas fa-shopping-cart"></i></div>
+</div>
+
+<div class="pro">
+  <img src="Images/1693676537804.jpg" alt="Product 1">
+  <div class="des">
+      <span>Category</span>
+      <h3>Product Name</h3>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star-half-alt"></i>
+      <h4>$49.99</h4>
+  </div>
+  <div class="cart"><i class="fas fa-shopping-cart"></i></div>
+</div>
+
+
+    <div class="pro">
+      <img src="Images/1685985474119.jpg" alt="Product 1">
+      <div class="des">
+          <span>Category</span>
+          <h3>Product Name</h3>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star-half-alt"></i>
+          <h4>$49.99</h4>
+      </div>
+      <div class="cart"><i class="fas fa-shopping-cart"></i></div>
+  </div>
+
+  <div class="pro">
+    <img src="Images/1685891404028.jpg" alt="Product 1">
+    <div class="des">
+        <span>Category</span>
+        <h3>Product Name</h3>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star-half-alt"></i>
+        <h4>$49.99</h4>
+    </div>
+    <div class="cart"><i class="fas fa-shopping-cart"></i></div>
+</div>
+
+<div class="pro">
+  <img src="Images/1685737666433.jpg" alt="Product 1">
+  <div class="des">
+      <span>Category</span>
+      <h3>Product Name</h3>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star-half-alt"></i>
+      <h4>$49.99</h4>
+  </div>
+  <div class="cart"><i class="fas fa-shopping-cart"></i></div>
+</div>
+        
+
+       
+    </div>
+</section>
 
   <div class="page-btn">
     <span>&#8592;</span>
-    <span><a href="Products1.html">1</a></span>
-    <span><a href="products2.html">2</a></span>
-    <span><a href="products3.html">3</a></span>
+    <span><a href="./products.html">1</a></span>
+    <span><a href="./products.html">2</a></span>
+    <span><a href="./products.html">3</a></span>
     <span>&#8594;</span>
 </div>
 
