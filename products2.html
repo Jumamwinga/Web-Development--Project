@@ -6,232 +6,770 @@
     <title> Products </title>
     <link rel="stylesheet" href="css/products.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            list-style: none;
+        }
+        body {
+          font-family:'Lucida Sans', 'Lucida Sans Regular', sans-serif;
+          background: transparent;
+        }
+        html{
+            background: #fbf9f9;
+            font-family: 'poppins', sans-serif;
+        }
+        img{
+            width: 15%;
+            height: 15%;
+        }
+        header{
+          padding-bottom: 100px;
+        }
+        .nav-container{
+            width: 100%;
+            height: 110px;
+            background: linear-gradient(35deg, rgba(0, 0, 0, 0.1), rgba(0,0,0,.1));
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 12px;
+            z-index: 1;
+            position: absolute;
+        }
+        .nav-container .logo{
+            width: 800px;
+        }
+        .nav-container .logo img{
+            border-radius: 100%;
+        }
+        .hamburger{
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+        }
+        .hamburger .line {
+            width: 25px;
+            height: 3px;
+            background: black;
+            margin: 4px 0;
+        }
+        .navbar ul{
+            display: flex;
+        }
+        .navbar ul li a{
+            display: block;
+            color: black;
+            font-size: 15px;
+            padding: 10px 25px;
+            border-radius: 25px;
+            transition: .5s;
+            margin: 0 10px;
+        }
+        .navbar ul li a:hover{
+            color: black;
+            background: white;
+        }
+        
+       
+        .belowfooter {
+          text-align: center;
+          border-top: 3px solid rgb(66, 66, 66);
+          padding-top: 2em;
+        }
+        .footerChild1, .footerChild2 {
+          min-width: 250px;
+          margin-bottom: 20px;
+        }
+        .footerChild1 {
+          flex: 1;
+          text-align: center;
+        }
+        .footerChild1 img {
+          width: 180px;
+          margin-bottom: 20px;
+        }
+        .footerChild2 {
+          flex-basis: 12%;
+        }
+        .footerChild2 img {
+          width: 250px;
+        }
+        .footerChild2 p {
+          align-items: right;
+          font-size: 14px;
+        }
+        .page-btn {
+          margin-bottom: 35px;
+          text-align: center;
+        }
+        .page-btn span {
+          display: inline-block;
+          background-color: rgb(83, 134, 103);
+          margin-left: 10px;
+          width: 40px;
+          height: 40px;
+          text-align: center;
+          line-height: 40px;
+          cursor: pointer;
+          border-radius: 5px;
+        }
+        .page-btn span:hover {
+          background-color: #333;
+          border: 1px solid grey;
+        }
+        
+
+
+
+
+        #products1 {
+            text-align: center;
+            padding: 25px;
+
+        }
+        #products1 h2 {
+          font-size: 50px;
+          color: black;
+          font-weight: 800;
+        }
+        #products1 p {
+          font-size: 20px;
+          padding: 20px 10px;
+        }
+
+        #products1 .pro-container {
+          display: flex;
+          justify-content: space-between;
+          padding-top: 20px;
+          flex-wrap: wrap;
+        }
+
+        #products1 .pro {
+            width: 23%;
+            min-width: 250px;
+            padding: 10px 12px;
+            border: 1px solid #cce7d0;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02) ;
+            margin: 15px 0;
+            transition: 0.2s ease;
+            position: relative;
+        } 
+        
+        #products1 .pro:hover {
+            box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06) ;
+        }
+
+        #products1 .pro img {
+            width: 230px;
+            height: 300px;
+            border-radius: 20px;
+        }
+        #products1 .pro .des {
+            text-align: start;
+            padding: 10px 0;
+        }
+        
+        #products1 .pro .des span {
+            color: #606063;
+            font-size: 14px;
+            
+        }
+        #products1 .pro .des h3 {
+          padding-top: 7px;
+          color: #1a1a1a;
+          font-size: 16px;
+        }
+        #products1 .pro .des i {
+          font-size: 14px;
+          color: rgb(243, 181, 25, );
+        }
+        #products1 .pro .des h4 {
+          padding-top: 7px;
+          font-size: 17px;
+          font-weight: 700;
+          color: #088178;
+        }
+        #products1 .pro .cart {
+          width: 40px;
+          height: 40px;
+          line-height: 40px;
+          border-radius: 50px;
+          background-color: #e8f6ea;
+          font-weight: 500;
+          color: #088178;
+          border: 1px solid #cce7d0;
+          position: absolute;
+          bottom: 20px;
+          right: 10px;
+        }
+        #products1 .pro .cart:hover {
+          color: red;
+        }
+
+        .footer {
+          padding: 80px 90px;
+          background: #241816;
+          margin-top: 30px;
+          color: white;
+        }
+        .footer-box {
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+        }
+        .footer-i {
+          flex: 1;
+          margin: 20px;
+          min-width: 200px; /* Ensures the items don't get too narrow on small screens */
+        }
+        .footer-i h4 {
+          margin-bottom: 15px;
+          font-size: 19px;
+        }
+        .footer-i p {
+          margin-bottom: 5px;
+          font-size: 14px;
+          color: rgb(137, 130, 130);
+        }
+        /* Remove the relative positioning for f3 and f4 to align them properly */
+        .footer-i.f3, .footer-i.f4 {
+          position: static;
+        }
+        .footer-i.f4 p {
+          width: 100%; /* Make sure the width is appropriate for responsiveness */
+          line-height: 22px;
+        }
+        .subscribe-form {
+          display: flex;
+          margin-top: 20px;
+        }
+        .subscribe-form input {
+          flex: 1;
+          padding: 12px 30px;
+          border: none;
+          outline: none;
+        }
+        .subscribe-form button {
+          padding: 12px;
+          background: white;
+          border: none;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .footer-i.f4 .social-media {
+          margin-top: 30px;
+          display: flex;
+          gap: 10px; /* Adds space between icons */
+        }
+        .footer-i.f4 .social-media a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-decoration: none; /* Remove the underline from links */
+        }
+        .footer-i.f4 .social-media a i {
+          color: white;
+          font-size: 19px;
+          border-radius: 50%;
+          transition: all .3s ease-in-out;
+          padding: 13px;
+        }
+        .footer-i.f4 .social-media a i:hover {
+          background: white;
+          color: black;
+        }
+        /* Media Queries */
+         @media (max-width: 1024px) {
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 20px;
+            }
+            .nav-container .logo {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            .navbar ul {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+            .navbar ul li a {
+                padding: 10px 0;
+                width: 100%;
+                text-align: center;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .footer-i {
+                flex: 0 1 50%;
+                margin: 20px;
+            }
+        }
+        @media (max-width: 768px) {
+            #products1 h2 {
+                font-size: 40px;
+            }
+            
+            #products1 p {
+                font-size: 18px;
+            }
+            #products1 .pro {
+                width: 45%;
+                margin: 10px 2.5%;
+            }
+            .footer {
+                padding: 60px 20px;
+            }
+            .navbar ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            .navbar ul li a {
+                margin: 5px 0;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .navbar {
+                display: none;
+            }
+            .hamburger.active + .navbar {
+                display: flex;
+            }
+            .nav-container .logo {
+                width: 400px;
+            }
+        }
+        @media (max-width: 580px) {
+          .footer-box .footer-i.f4 {
+              margin: 20px;
+          }
+          .footer-box .footer-i.f4 p {
+              width: 300px;
+          }
+          .subscribe-form input {
+              width: 250px;
+              padding: 12px 30px;
+          }
+        }
+        @media (max-width: 480px) {
+            #products1 h2 {
+                font-size: 30px;
+            }
+            #products1 p {
+                font-size: 16px;
+            }
+            #products1 .pro {
+                width: 100%;
+                margin: 10px 0;
+            }
+            .footer-box {
+                flex-direction: column;
+                align-items: center;
+            }
+            .footer-i {
+                width: 100%;
+                text-align: center;
+                margin: 10px 0;
+            }
+            .subscribe-form {
+                flex-direction: column;
+            }
+            .subscribe-form input, .subscribe-form button {
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
+        @media (max-width: 440px) {
+          body {
+              text-align: center;
+              padding: 0;
+              margin: 0;
+          }
+          .footer-box {
+              flex-direction: column;
+              align-items: center;
+          }
+          .footer-i {
+              margin: 10px 0;
+          }
+          .footer-box .footer-i.f4 p {
+              width: 250px;
+              margin: 0 auto;
+          }
+          .subscribe-form {
+              flex-direction: column;
+              align-items: center;
+          }
+          .subscribe-form input {
+              width: 200px;
+              padding: 10px 25px;
+              margin: 10px 0;
+          }
+          .subscribe-form button {
+              width: 50px;
+              padding: 10px;
+              margin: 10px 0;
+          }
+          .footer-i.f4 .social-media {
+              justify-content: center;
+          }
+          .footer-i.f4 .social-media a {
+              margin: 0 5px;
+          }
+          .footer-i.f4 .social-media a i {
+              font-size: 17px;
+              padding: 11px;
+          }
+        }
+       
+    </style>
 </head>
 <body>
-    <header>
-        <div class="nav-container">
-            <div class="logo">
-                <a href="bq.html"> <img src="Images/1700130079881.jpg" alt="Trend Clothes Logo"></a>
-
-    </div>
-    <div class="hamburger">
+  <header>
+    <div class="nav-container">
+      <div class="logo">
+        <img src="Images/logo.jpg" alt="logo">
+      </div>
+      <div class="hamburger">
         <div class="line"></div>
         <div class="line"></div>
         <div class="line"></div>
-    </div>
-    <nav class="navbar">
+      </div>
+      <nav class="navbar">
         <ul>
-            <li><a href="index.html" aria-label="Trends"> Trends </a></li>
-            <li><a href="category.html" aria-label="Category"> Category </a></li>
-            <li><a href="products2.html" aria-label="Products"> Products </a></li>
-            <li><a href="news.html" aria-label="News"> News </a></li>
+          <li><a href="index.html">Trends</a></li>
+          <li><a href="category.html">Category</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="news.html">News</a></li>
         </ul>
-    </nav>
-    
-        </div>
-    </header> 
+      </nav>
+    </div>
+  </header>
 
+
+
+
+  <section id="products1" class="section1">
+    <h2> Featured Products </h2>
+    <p>Summer Collection New Modern Designs</p>
+    <div class="pro-container">
+      <div class="pro">
+        <img src="Images/1693676537804.jpg" alt="Product 1">
+        <div class="des">
+            <span>Category</span>
+            <h3>Product Name</h3>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <h4>$49.99</h4>
+        </div>
+        <div class="cart"><i class="fas fa-shopping-cart"></i></div>
+    </div>
+
+    <div class="pro">
+      <img src="Images/1693676537804.jpg" alt="Product 1">
+      <div class="des">
+          <span>Category</span>
+          <h3>Product Name</h3>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star-half-alt"></i>
+          <h4>$49.99</h4>
+      </div>
+      <div class="cart"><i class="fas fa-shopping-cart"></i></div>
+  </div>
+
+  <div class="pro">
+    <img src="Images/1693676537804.jpg" alt="Product 1">
+    <div class="des">
+        <span>Category</span>
+        <h3>Product Name</h3>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star-half-alt"></i>
+        <h4>$49.99</h4>
+    </div>
+    <div class="cart"><i class="fas fa-shopping-cart"></i></div>
+</div>
+
+<div class="pro">
+  <img src="Images/1693676537804.jpg" alt="Product 1">
+  <div class="des">
+      <span>Category</span>
+      <h3>Product Name</h3>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star-half-alt"></i>
+      <h4>$49.99</h4>
+  </div>
+  <div class="cart"><i class="fas fa-shopping-cart"></i></div>
+</div>
+
+<div class="pro">
+  <img src="Images/1693676537804.jpg" alt="Product 1">
+  <div class="des">
+      <span>Category</span>
+      <h3>Product Name</h3>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star-half-alt"></i>
+      <h4>$49.99</h4>
+  </div>
+  <div class="cart"><i class="fas fa-shopping-cart"></i></div>
+</div>
+
+<div class="pro">
+  <img src="Images/1693676537804.jpg" alt="Product 1">
+  <div class="des">
+      <span>Category</span>
+      <h3>Product Name</h3>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star-half-alt"></i>
+      <h4>$49.99</h4>
+  </div>
+  <div class="cart"><i class="fas fa-shopping-cart"></i></div>
+</div>
+
+<div class="pro">
+  <img src="Images/1693676537804.jpg" alt="Product 1">
+  <div class="des">
+      <span>Category</span>
+      <h3>Product Name</h3>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star-half-alt"></i>
+      <h4>$49.99</h4>
+  </div>
+  <div class="cart"><i class="fas fa-shopping-cart"></i></div>
+</div>
+
+<div class="pro">
+  <img src="Images/1693676537804.jpg" alt="Product 1">
+  <div class="des">
+      <span>Category</span>
+      <h3>Product Name</h3>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star-half-alt"></i>
+      <h4>$49.99</h4>
+  </div>
+  <div class="cart"><i class="fas fa-shopping-cart"></i></div>
+</div>
+
+<div class="pro">
+  <img src="Images/1693676537804.jpg" alt="Product 1">
+  <div class="des">
+      <span>Category</span>
+      <h3>Product Name</h3>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star-half-alt"></i>
+      <h4>$49.99</h4>
+  </div>
+  <div class="cart"><i class="fas fa-shopping-cart"></i></div>
+</div>
+
+<div class="pro">
+  <img src="Images/1693676537804.jpg" alt="Product 1">
+  <div class="des">
+      <span>Category</span>
+      <h3>Product Name</h3>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star-half-alt"></i>
+      <h4>$49.99</h4>
+  </div>
+  <div class="cart"><i class="fas fa-shopping-cart"></i></div>
+</div>
+
+<div class="pro">
+  <img src="Images/1693676537804.jpg" alt="Product 1">
+  <div class="des">
+      <span>Category</span>
+      <h3>Product Name</h3>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star-half-alt"></i>
+      <h4>$49.99</h4>
+  </div>
+  <div class="cart"><i class="fas fa-shopping-cart"></i></div>
+</div>
+
+<div class="pro">
+  <img src="Images/1693676537804.jpg" alt="Product 1">
+  <div class="des">
+      <span>Category</span>
+      <h3>Product Name</h3>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star-half-alt"></i>
+      <h4>$49.99</h4>
+  </div>
+  <div class="cart"><i class="fas fa-shopping-cart"></i></div>
+</div>
+
+<div class="pro">
+  <img src="Images/1693676537804.jpg" alt="Product 1">
+  <div class="des">
+      <span>Category</span>
+      <h3>Product Name</h3>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star-half-alt"></i>
+      <h4>$49.99</h4>
+  </div>
+  <div class="cart"><i class="fas fa-shopping-cart"></i></div>
+</div>
+
+
+    <div class="pro">
+      <img src="Images/1685985474119.jpg" alt="Product 1">
+      <div class="des">
+          <span>Category</span>
+          <h3>Product Name</h3>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star-half-alt"></i>
+          <h4>$49.99</h4>
+      </div>
+      <div class="cart"><i class="fas fa-shopping-cart"></i></div>
+  </div>
+
+  <div class="pro">
+    <img src="Images/1685891404028.jpg" alt="Product 1">
+    <div class="des">
+        <span>Category</span>
+        <h3>Product Name</h3>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star-half-alt"></i>
+        <h4>$49.99</h4>
+    </div>
+    <div class="cart"><i class="fas fa-shopping-cart"></i></div>
+</div>
+
+<div class="pro">
+  <img src="Images/1685737666433.jpg" alt="Product 1">
+  <div class="des">
+      <span>Category</span>
+      <h3>Product Name</h3>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star-half-alt"></i>
+      <h4>$49.99</h4>
+  </div>
+  <div class="cart"><i class="fas fa-shopping-cart"></i></div>
+</div>
         
-            <div class="child">
-                <div class="childprods">
-                    <a href="./product_details.html"><img src="Images/Trend 3.jpg"></a>
-                    <h4>Black T-Shirt for Women</h4>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-o"></i>
-                    </div>
-                    <p>$59.99</p>
-                </div>
-                <div class="childprods">
-                    <a href="./product_details.html"><img src="./Images/IMG-20240426-WA0015.jpg"></a>
-                    <h4>Men's Casual Hoodies</h4>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-half-o"></i>
-                    </div>
-                    <p>$70.99</p>
-                </div>
-                <div class="childprods">
-                    <a href="./product_details.html"><img src="./images/man 2.jpg"></a>
-                    <h4>Unisex slim fits</h4>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                    </div>
-                    <p>$87.99</p>
-                </div>
-                <div class="childprods">
-                    <a href="./product_details.html"><img src="./images/ma.jpg"></a>
-                    <h4>Sports Wear</h4>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                    <p>$138.99</p>
-                </div>
-                <div class="childprods">
-                    <a href="./product_details.html"><img src="./images/dress 3.jpg"></a>
-                    <h4>Jackets for Women</h4>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                    <p>$100.99</p>
-                </div>
-                <div class="childprods">
-                    <a href="./product_details.html"><img src="./images/Women 1.jpg"></a>
-                    <h4>Black Pants for Women</h4>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-half-o"></i>
-                    </div>
-                    <p>$102.99</p>
-                </div>
-                <div class="childprods">
-                    <a href="./product_details.html"><img src="./Images/1707243720359.jpg"></a>
-                    <h4>T-Shirts for Men</h4>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-half-o"></i>
-                    </div>
-                    <p>$109.99</p>
-                </div>
-                <div class="childprods">
-                    <a href="./product_details.html"><img src="./Images/Trend 5.jpg"></a>
-                    <h4>White Hoodies</h4>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                    <p>$129.99</p>
-                </div>
-                <div class="childprods">
-                    <a href="./product_details.html"><img src="./Images/1710277230453.jpg"></a>
-                    <h4>Casual T-Shirts</h4>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-half"></i>
-                        <i class="fa fa-star-o"></i>
-                    </div>
-                    <p>$89.99</p>
-                </div>
-                <div class="childprods">
-                    <a href="./product_details.html"><img src="./Images/1693676537804.jpg"></a>
-                    <h4>Casual Wear</h4>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-half-o"></i>
-                    </div>
-                    <p>$45.99</p>
-                </div>
-                <div class="childprods">
-                    <a href="./product_details.html"><img src="./Images/1710277230453.jpg"></a>
-                    <h4>Gym Sweatpants</h4>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-half-o"></i>
-                    </div>
-                    <p>$56.99</p>
-                </div>
-                <div class="childprods">
-                    <a href="./product_details.html"><img src="./Images/COLLECTION 1.jpg"></a>
-                    <h4>Red Socks</h4>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                    </div>
-                    <p>$29.99</p>
-                </div>
-            </div>
-            <div class="page-btn">
-                <span>&#8592;</span>
-                <span><a href="./products.html">1</a></span>
-                <span><a href="products2.html">2</a></span>
-                <span><a href="products3.html">3</a></span>
-                <span>&#8594;</span>
-            </div>
+
+       
+    </div>
+</section>
+
+  <div class="page-btn">
+    <span>&#8592;</span>
+    <span><a href="Products1.html">1</a></span>
+    <span><a href="products2.html">2</a></span>
+    <span><a href="products3.html">3</a></span>
+    <span>&#8594;</span>
+</div>
+
+
+  <div class="footer">
+    <div class="footer-box">
+      <div class="footer-i f1">
+        <h4>About Us</h4>
+        <p>Trend Clothes is a modern online shopping platform dealing with all kinds of clothes. 
+            We range from women, men, and children. At Trends Clothes, 
+            we value our customers and we are here to serve you. 
+            Come and experience the magic of trends with us!</p>
+      </div>
+      <div class="footer-i f2">
+        <h4>Visit Us</h4>
+        <p>Getting Here</p>
+        <p>Our Supporters</p>
+        <p>Sitting Charts</p>
+        <p>Staff Directory</p>
+        <p>Current Season</p>
+        <p>Donor Events</p>
+      </div>
+      <div class="footer-i f3">
+        <h4>Contact Us</h4>
+        <p>Address: 155 Uwanja Wa Ndege, Mazeras, Kenya</p>
+        <p>Email: info@trends.com</p>
+        <p>Phone: +254714263178</p>
+      </div>
+      <div class="footer-i f4">
+        <h4>Subscribe</h4>
+        <form class="subscribe-form">
+          <input type="email" placeholder="Email Address">
+          <button type="submit"><i class="fa fa-envelope"></i></button>
+        </form>
+        <div class="social-media">
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
         </div>
-        <div class="footer">
-            <div class="footer-box">
-                <div class="footer-i f1">
-                    <h4>Contact</h4>
-                    <p>Street: 155, Mazeras-Uwanja Wa Ndege</p>
-                    <p>City: Mombasa</p>
-                    <p>State: Kenya</p>
-                    <p>Zip Code: 80114</p>
-                    <p>Phone Number: +2547-992-121-75</p>
-                    <p>Mobile Number: 0714263178</p>
-                </div>
-                <div class="footer-i f2">
-                    <h4>Visit Us</h4>
-                    <p>Getting Here</p>
-                    <p>Our Supporters</p>
-                    <p>Sitting Charts</p>
-                    <p>Staff Directory</p>
-                    <p>Current Season</p>
-                    <p>Donor Events</p>
-                </div>
-                <div class="footer-i f3">
-                    <h4>Recent Posts</h4>
-                    <p>Breaking Down Barriers</p>
-                    <p>A Celebration Of Success</p>
-                    <p>A World Of Opportunities</p>
-                </div>
-                <div class="footer-i f4">
-                    <h4>Trend Clothes</h4>
-                    <p>
-                        Trend Clothes is a modern online shopping platform dealing with all kinds of clothes. We range from women, men, and children.
-                        At Blabla Clothes, we value our customers and we are here to serve you. Come and experience the magic of trends with us!
-                    </p>
-                    <form class="subscribe-form">
-                        <input type="text" placeholder="Email Address">
-                        <button type="submit"><i class="fa-solid fa-share"></i></button>
-                    </form>
-                    <div class="social-media">
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-<script src="products.js"></script>
+      </div>
+    </div>
+  </div>
+  <div class="belowfooter">
+    <p>&copy; 2024 Trends Fashions. All rights reserved.</p>
+  </div>
+  <script>
+    document.querySelector('.hamburger').addEventListener('click', function() {
+      this.classList.toggle('active');
+      document.querySelector('.navbar').classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
