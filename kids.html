@@ -3,33 +3,367 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
-     <title> CATEGORY  </title>
-    <link rel="stylesheet" href="kids.css">
+    <title>KIDS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            list-style: none;
+        }
+
+        html {
+            background: #fbf9f9;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        img {
+            width: 200px;
+            height: 300px;
+            display: block;
+        }
+
+        .logo img {
+            width: 15%;
+            height: 15%;
+        }
+
+        .nav-container {
+            width: 100%;
+            height: 110px;
+            background: linear-gradient(35deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, .1));
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 12px;
+            z-index: 1;
+            position: absolute;
+        }
+
+        .nav-container .logo {
+            width: 800px;
+        }
+
+        .nav-container .logo img {
+            border-radius: 100%;
+        }
+
+        .hamburger {
+            display: none;
+        }
+
+        .navbar ul {
+            display: flex;
+        }
+
+        .navbar ul li a {
+            display: block;
+            color: black;
+            font-size: 15px;
+            padding: 10px 25px;
+            border-radius: 25px;
+            transition: .5s;
+            margin: 0 10px;
+        }
+
+        .navbar ul li a:hover {
+            color: black;
+            background: white;
+        }
+
+        .section_title {
+            padding-bottom: .5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 600;
+            color: black;
+            position: relative;
+            padding-top: 10rem;
+            text-decoration: underline;
+        }
+
+        /* Must have */
+        .musthave_nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 5rem;
+        }
+
+        .musthave_nav a {
+            font-size: 1rem;
+            font-weight: 600;
+            color: rgb(20, 19, 19);
+            transition: 0.3s;
+        }
+
+        .musthave_nav a:hover {
+            color: grey;
+        }
+
+        .musthave_grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            padding-left: 4rem;
+        }
+
+        .musthave_card {
+            display: grid;
+            gap: .5rem;
+            color: black;
+        }
+
+        .musthave_card h4 {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .musthave_card p {
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .musthave_card p del {
+            font-weight: 400;
+            color: rgba(0, 0, 0, 0.596);
+            text-decoration: line-through;
+            padding-right: .5rem;
+        }
+
+        .page-btn {
+            display: flex;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #0c9c2b;
+            color: white;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #333;
+            border: 1px solid grey;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 80px 90px;
+            background: #241816;
+            margin-top: 30px;
+            color: white;
+        }
+
+        .footer-box {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .footer-i {
+            flex: 1;
+            margin: 20px;
+            min-width: 200px;
+        }
+
+        .footer-i h4 {
+            margin-bottom: 15px;
+            font-size: 19px;
+        }
+
+        .footer-i p {
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: rgb(137, 130, 130);
+        }
+
+        .footer-i.f3,
+        .footer-i.f4 {
+            position: static;
+        }
+
+        .footer-i.f4 p {
+            width: 100%;
+            line-height: 22px;
+        }
+
+        .subscribe-form {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .subscribe-form input {
+            flex: 1;
+            padding: 12px 30px;
+            border: none;
+            outline: none;
+        }
+
+        .subscribe-form button {
+            padding: 12px;
+            background: white;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer-i.f4 .social-media {
+            margin-top: 30px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .footer-i.f4 .social-media a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        .footer-i.f4 .social-media a i {
+            color: white;
+            font-size: 19px;
+            border-radius: 50%;
+            transition: all .3s ease-in-out;
+            padding: 13px;
+        }
+
+        .footer-i.f4 .social-media a i:hover {
+            background: white;
+            color: black;
+        }
+
+        .belowfooter {
+            text-align: center;
+            border-top: 3px solid rgb(66, 66, 66);
+            padding-top: 2em;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+                cursor: pointer;
+            }
+
+            .hamburger .line {
+                width: 25px;
+                height: 3px;
+                background-color: black;
+                margin: 5px;
+                transition: 0.4s;
+            }
+
+            .navbar ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 110px;
+                left: 0;
+                width: 100%;
+                background: rgba(255, 255, 255, 0.9);
+                text-align: center;
+            }
+
+            .navbar ul.active {
+                display: flex;
+            }
+
+            .navbar ul li a {
+                padding: 10px 0;
+                border-bottom: 1px solid #ddd;
+                margin: 0;
+            }
+
+            .navbar ul li a:last-child {
+                border-bottom: none;
+            }
+
+            .hamburger.active .line:nth-child(1) {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+
+            .hamburger.active .line:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active .line:nth-child(3) {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+        }
+
+        /* Sticky Navbar */
+        header.sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Scroll-to-top button */
+        .scroll-to-top {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #0c9c2b;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 18px;
+            z-index: 1000;
+        }
+
+        .scroll-to-top:hover {
+            background-color: #333;
+            border: 1px solid grey;
+        }
+    </style>
 </head>
 <body>
     <header>
         <div class="nav-container">
             <div class="logo">
-                <a href="index.html"> <img src="Images/logo.jpg" alt=""></a>
-    </div>
-    <div class="hamburger">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-    </div>
-        <nav class="navbar">
-            <ul>
-                <li><a href="index.html" class="Active"> Trends </a></li>
-                <li><a href="category.html" class="Active"> Category </a></li>
-                <li><a href="products.html" class="Active"> Products </a></li>
-                <li><a href="news.html" class="Active"> News </a></li>
-            </ul>
+                <a href="index.html"><img src="Images/logo.jpg" alt=""></a>
+            </div>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html" class="Active">Trends</a></li>
+                    <li><a href="category.html" class="Active">Category</a></li>
+                    <li><a href="products.html" class="Active">Products</a></li>
+                    <li><a href="news.html" class="Active">News</a></li>
+                </ul>
             </nav>
+        </div>
     </header>
 
     <section class="section_container">
-        <h2 class="section_title"> KID'S CONNER </h2>
+        <h2 class="section_title">KID'S CONNER</h2>
         <div class="musthave_nav">
             <a href="#">ALL</a>
             <a href="#">Shoes</a>
@@ -96,7 +430,7 @@
             </div>
             <div class="musthave_card">
                 <img src="Images/COLLECTION 3.jpg" alt="must have">
-                <h4>Hooded nautical jacket </h4>
+                <h4>Hooded nautical jacket</h4>
                 <p><del>$45.00</del>$25.00</p>
             </div>
         </div>
@@ -104,51 +438,101 @@
         <div class="page-btn">
             <a href="#" class="btn">More</a>
         </div>
-        
     </section>
     <div class="footer">
         <div class="footer-box">
-          <div class="footer-i f1">
-            <h4>About Us</h4>
-            <p>Trend Clothes is a modern online shopping platform dealing with all kinds of clothes. 
+            <div class="footer-i f1">
+                <h4>About Us</h4>
+                <p>Trend Clothes is a modern online shopping platform dealing with all kinds of clothes. 
                 We range from women, men, and children. At Trends Clothes, 
                 we value our customers and we are here to serve you. 
                 Come and experience the magic of trends with us!</p>
-          </div>
-          <div class="footer-i f2">
-            <h4>Visit Us</h4>
-            <p>Getting Here</p>
-            <p>Our Supporters</p>
-            <p>Sitting Charts</p>
-            <p>Staff Directory</p>
-            <p>Current Season</p>
-            <p>Donor Events</p>
-          </div>
-          <div class="footer-i f3">
-            <h4>Contact Us</h4>
-            <p>Address: 155 Uwanja Wa Ndege, Mazeras, Kenya</p>
-            <p>Email: info@trends.com</p>
-            <p>Phone: +254714263178</p>
-          </div>
-          <div class="footer-i f4">
-            <h4>Subscribe</h4>
-            <form class="subscribe-form">
-              <input type="email" placeholder="Email Address">
-              <button type="submit"><i class="fa fa-envelope"></i></button>
-            </form>
-            <div class="social-media">
-              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <div class="footer-i f2">
+                <h4>Visit Us</h4>
+                <p>Getting Here</p>
+                <p>Our Supporters</p>
+                <p>Sitting Charts</p>
+                <p>Staff Directory</p>
+                <p>Current Season</p>
+                <p>Donor Events</p>
+            </div>
+            <div class="footer-i f3">
+                <h4>Contact Us</h4>
+                <p>Address: 155 Uwanja Wa Ndege, Mazeras, Kenya</p>
+                <p>Email: info@trends.com</p>
+                <p>Phone: +254714263178</p>
+            </div>
+            <div class="footer-i f4">
+                <h4>Subscribe</h4>
+                <form class="subscribe-form">
+                    <input type="email" placeholder="Email Address">
+                    <button type="submit"><i class="fa fa-envelope"></i></button>
+                </form>
+                <div class="social-media">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
                     <a href="#"><i class="fa-brands fa-youtube"></i></a>
                     <a href="#"><i class="fa-brands fa-linkedin"></i></a>
                     <a href="#"><i class="fa-brands fa-twitter"></i></a>
                     <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-      <div class="belowfooter">
+    </div>
+    <div class="belowfooter">
         <p>&copy; 2024 Trends Fashions. All rights reserved.</p>
-      </div>
-   
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const hamburger = document.querySelector(".hamburger");
+            const navMenu = document.querySelector(".navbar ul");
+            const header = document.querySelector("header");
+            const scrollTopBtn = document.createElement("button");
+            
+            // Hamburger menu toggle
+            hamburger.addEventListener("click", () => {
+                navMenu.classList.toggle("active");
+                hamburger.classList.toggle("active");
+            });
+
+            // Sticky Navbar
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > 50) {
+                    header.classList.add("sticky");
+                } else {
+                    header.classList.remove("sticky");
+                }
+                
+                // Show or hide the scroll-to-top button
+                if (window.scrollY > 200) {
+                    scrollTopBtn.style.display = "block";
+                } else {
+                    scrollTopBtn.style.display = "none";
+                }
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener("click", function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute("href")).scrollIntoView({
+                        behavior: "smooth"
+                    });
+                });
+            });
+
+            // Scroll to top button
+            scrollTopBtn.innerText = "↑";
+            scrollTopBtn.classList.add("scroll-to-top");
+            document.body.appendChild(scrollTopBtn);
+
+            scrollTopBtn.addEventListener("click", () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            });
+        });
+    </script>
 </body>
 </html>
