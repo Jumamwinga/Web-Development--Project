@@ -1135,3 +1135,22 @@ img{
         right: 10px;
     }
 }
+@media (max-width: 600px) {
+    .footer-i {
+      max-width: 100%;
+    }
+  
+    .subscribe-form input {
+      width: 90%;
+    }
+  
+    .footer-i.f4 .social-media a {
+      margin-right: 5px;
+      font-size: 17px;
+      padding: 11px;
+    }
+  
+    .footer-i.f4 button {
+      padding: 10px;
+    }
+  }
