@@ -455,100 +455,117 @@ img{
 }
 
 /*footer*/
+/* footer */
 .footer {
-  padding: 80px 90px;
-  background: #241816;
-  margin-top: 30px;
-  color: white;
-}
-
-.footer-box {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: nowrap; /* Prevents wrapping */
-}
-
-.footer-i {
-  flex: 1;
-  margin: 20px;
-  min-width: 200px; /* Ensures the items don't get too narrow on small screens */
-  max-width: 25%; /* Limits the width to ensure they fit in one row */
-  box-sizing: border-box;
-}
-
-.footer-i h4 {
-  margin-bottom: 15px;
-  font-size: 19px;
-}
-
-.footer-i p {
-  margin-bottom: 5px;
-  font-size: 14px;
-  color: rgb(137, 130, 130);
-}
-
-/* Remove the relative positioning for f3 and f4 to align them properly */
-.footer-i.f3,
-.footer-i.f4 {
-  position: static;
-}
-
-.footer-i.f4 p {
-  width: 100%; /* Make sure the width is appropriate for responsiveness */
-  line-height: 22px;
-}
-
-.subscribe-form {
-  display: flex;
-  margin-top: 20px;
-}
-
-.subscribe-form input {
-  flex: 0;
-  padding: 0;
-  border: none;
-  outline: none;
-}
-
-.subscribe-form button {
-  padding: 12px;
-  background: white;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.footer-i.f4 .social-media {
-  display: flex;
-  gap: 10px; /* Adds space between icons */
-}
-
-.footer-i.f4 .social-media a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none; /* Remove the underline from links */
-}
-
-.footer-i.f4 .social-media a i {
-  color: white;
-  font-size: 19px;
-  border-radius: 50%;
-  transition: all 0.3s ease-in-out;
-  padding: 13px;
-}
-
-.footer-i.f4 .social-media a i:hover {
-  background: white;
-  color: black;
-}
-
-/* Adjusted styling for aligning social media icons to the left */
-.footer-i.f4 {
-  /* Remove justify-content: flex-end; */
-}
+    padding: 40px 10px;
+    background: #241816;
+    color: white;
+    text-align: center;
+  }
+  
+  .footer-box {
+    display: flex;
+    flex-direction: column; /* Changed to column for better responsiveness */
+    align-items: center;
+  }
+  
+  .footer-i {
+    margin: 20px;
+    min-width: 200px;
+    max-width: 90%; /* Limits the width for better fitting on small screens */
+    box-sizing: border-box;
+    text-align: center;
+  }
+  
+  .footer-i h4 {
+    margin-bottom: 15px;
+    font-size: 19px;
+  }
+  
+  .footer-i p {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: rgb(137, 130, 130);
+    word-wrap: break-word; /* Ensures long words break to fit the container */
+  }
+  
+  .subscribe-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .subscribe-form input {
+    padding: 10px;
+    border: none;
+    outline: none;
+    width: 80%; /* Adjusts the width to fit within small screens */
+    margin-bottom: 10px;
+  }
+  
+  .subscribe-form button {
+    padding: 10px;
+    background: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .footer-i.f4 .social-media {
+    display: flex;
+    gap: 10px;
+    justify-content: center; /* Centers the icons */
+    flex-wrap: wrap; /* Allows the icons to wrap to the next line if needed */
+  }
+  
+  .footer-i.f4 .social-media a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .footer-i.f4 .social-media a i {
+    color: white;
+    font-size: 19px;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+    padding: 13px;
+  }
+  
+  .footer-i.f4 .social-media a i:hover {
+    background: white;
+    color: black;
+  }
+  
+  .belowfooter {
+    text-align: center;
+    border-top: 3px solid rgb(66, 66, 66);
+    padding-top: 2em;
+  }
+  
+  @media (max-width: 600px) {
+    .footer-i {
+      max-width: 100%;
+    }
+  
+    .subscribe-form input {
+      width: 90%;
+    }
+  
+    .footer-i.f4 .social-media a {
+      margin-right: 5px;
+      font-size: 17px;
+      padding: 11px;
+    }
+  
+    .footer-i.f4 button {
+      padding: 10px;
+    }
+  }
+  
 
 .belowfooter {
   text-align: center;
